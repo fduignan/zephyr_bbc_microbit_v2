@@ -38,7 +38,7 @@ void main(void)
 	gpio=device_get_binding("GPIO_0");
 	ret = gpio_pin_configure(gpio,2,GPIO_OUTPUT);
 	uint8_t buf[]={0x60,0x80};
-	ret = i2c_write(i2c_dev, buf, 2, 0x1e);  // power up the magnetometer (driver is broken)
+//	ret = i2c_write(i2c_dev, buf, 2, 0x1e);  // power up the magnetometer (driver is broken)
 	while(1)
 	{
 		gpio_pin_set(gpio,2,1);
