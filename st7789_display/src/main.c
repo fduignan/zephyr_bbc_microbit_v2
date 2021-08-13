@@ -1,6 +1,5 @@
 /*
- * Copyright (c) 2012-2014 Wind River Systems, Inc.
- *
+ * Written by Frank Duignan, frank@ioprog.com
  * SPDX-License-Identifier: Apache-2.0
  */
 

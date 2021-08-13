@@ -1,3 +1,4 @@
+// Written by Frank Duignan, frank@ioprog.com
 #include <sys/printk.h>
 #include <device.h>
 #include <drivers/gpio.h>
