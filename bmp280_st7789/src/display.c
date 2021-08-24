@@ -70,7 +70,7 @@ int display_begin()
 {
 	int ret;
 	// Set up the SPI interface
-	spi_display = device_get_binding("SPI_1");
+	spi_display = device_get_binding("SPI_2");
 	if (spi_display==NULL)
 	{
 		printf("Error acquiring SPI interface\n");
@@ -443,7 +443,7 @@ void display_print(const char *Text, uint16_t len, uint16_t x, uint16_t y, uint1
 }
 uint16_t display_RGBToWord(uint16_t R, uint16_t G, uint16_t B)
 {
-    uint16_t rvalue = 0;
+    uint16_t rvalue = 0;	
     rvalue += G >> 5;
     rvalue += (G & (0b111)) << 13;
     rvalue += (R >> 3) << 8;
