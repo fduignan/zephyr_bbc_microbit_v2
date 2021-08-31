@@ -1,8 +1,6 @@
 /* main.c - Application main entry point */
 
 /* Based on an example from Zephyr toolkit, modified by frank duignan
- * Copyright (c) 2015-2016 Intel Corporation
- *
  * SPDX-License-Identifier: Apache-2.0
  */
 /* This example advertises three services:
