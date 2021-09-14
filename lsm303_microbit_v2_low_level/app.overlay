@@ -1,0 +1,11 @@
+/*
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&i2c1 {
+	compatible = "nordic,nrf-twim";
+	status = "okay";
+	sda-pin = < 16 >;   // P0.16 = I2C_INT_SDA
+	scl-pin = < 8 >;    // P0.8 = I2C_INT_SCL
+};
