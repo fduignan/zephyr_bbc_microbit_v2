@@ -1,0 +1,27 @@
+/*
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&i2c1 {
+	compatible = "nordic,nrf-twim";
+	status = "okay";
+	sda-pin = < 16 >;   // P0.16 = I2C_INT_SDA
+	scl-pin = < 8 >;    // P0.8 = I2C_INT_SCL
+};
+&spi2 {
+ compatible = "nordic,nrf-spi";
+ status = "okay";
+ sck-pin = <17>;
+ mosi-pin = <13>;
+ /* Redirecting MISO to a pin that is not connected on the microbit v2 board */
+ miso-pin = <27>;
+ clock-frequency = <1000000>;
+};
+&adc {
+        status = "okay";
+};
+&pwm0 {
+        status = "okay";
+        ch0-pin = <3>; // P0.3 is labelled RING1 on the microbit. (connected to pin 1 in breakout board)
+};
