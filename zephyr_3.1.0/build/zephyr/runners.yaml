@@ -1,0 +1,36 @@
+# Available runners configured by board.cmake.
+runners:
+- pyocd
+- nrfjprog
+- jlink
+
+# Default flash runner if --runner is not given.
+flash-runner: pyocd
+
+# Default debug runner if --runner is not given.
+debug-runner: pyocd
+
+# Common runner configuration values.
+config:
+  board_dir: /home/frank/zephyrproject/zephyr/boards/arm/bbc_microbit_v2
+  # Build outputs:
+  elf_file: zephyr.elf
+  hex_file: zephyr.hex
+  bin_file: zephyr.bin
+  # Host tools:
+  gdb: /home/frank/zephyr-sdk-0.14.2/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb-no-py
+  openocd: /home/frank/zephyr-sdk-0.14.2/sysroots/x86_64-pokysdk-linux/usr/bin/openocd
+  openocd_search:
+    - /home/frank/zephyr-sdk-0.14.2/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  pyocd:
+    - --dt-flash=y
+    - --target=nrf52833
+  nrfjprog:
+    - --nrf-family=NRF52
+  jlink:
+    - --dt-flash=y
+    - --device=nRF52833_xxAA
+    - --speed=4000

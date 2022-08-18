@@ -6,4 +6,4 @@ Issue: Notification warning and failure to send data to client
 Detail:
 Client BLE scanner, (also tried javascript/node-ble and similar behavious).
 Client connects to BLE server (zephyr) and waits for notification for changes to a particular characteritic.
-Server sends update using function gatt_notify.
+Server sends update using function gatt_notify. 

@@ -1,0 +1,10 @@
+&spi0:  {
+	#address-cells = < 0x1 >;
+	#size-cells = < 0x0 >;
+	compatile = "nordic,nrf-spim"
+	reg = < 0x40003000 0x1000 >;
+	interrupts = < 0x3 0x1 >;
+	status = "disabled";
+	label = "SPI_0";
+	
+};

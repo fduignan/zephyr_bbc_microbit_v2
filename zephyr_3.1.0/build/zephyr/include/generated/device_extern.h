@@ -1,0 +1,1 @@
+#error The contents of this file are now implemented directly in zephyr/device.h.

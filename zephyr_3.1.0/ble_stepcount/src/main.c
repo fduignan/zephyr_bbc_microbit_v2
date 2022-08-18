@@ -180,7 +180,7 @@ void main(void)
 	if (err) {
 		printk("Bluetooth init failed (err %d)\n", err);
 		return;
-	}
+	}// bt_gatt_notify_uuid(active_conn,&stepcount_id,&my_service_svc.attrs[2], &stepcount_value,sizeof(stepcount_value));		
 	bt_ready(); // This function starts advertising
 	bt_conn_cb_register(&conn_callbacks);
 	printk("Zephyr Microbit V2 minimal BLE example! %s\n", CONFIG_BOARD);

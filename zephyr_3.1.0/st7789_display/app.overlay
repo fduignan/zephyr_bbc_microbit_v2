@@ -1,0 +1,60 @@
+/*
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+//&spi1 {
+// compatible = "nordic,nrf-spi";
+// status = "okay";
+// sck-pin = <17>;
+ //mosi-pin = <13>;
+ /* Redirecting MISO to a pin that is not connected on the microbit v2 board */
+ //miso-pin = <27>;
+ //clock-frequency = <1000000>;
+//};
+
+&spi1 {
+	status = "disabled";
+};
+
+&pinctrl {
+    /* IMPORTANT!  There should not be a space before the : in the next line (and similar below) */
+    spi3_default_alt: spi3_default_alt {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI,0,13)>,
+                    <NRF_PSEL(SPIM_SCK,0,17)>;
+        };
+        group2 {
+        psels = <NRF_PSEL(SPIM_MISO, 0, 27)>;
+        bias-pull-down;
+        };
+        
+    };
+    spi3_sleep_alt: spi3_sleep_alt {
+        group1 {
+            psels = <NRF_PSEL(SPIM_MOSI,0,13)>,
+                    <NRF_PSEL(SPIM_SCK,0,17)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 27)>;
+            low-power-enable;
+        };
+    };
+};
+&spi3 {
+    compatible = "nordic,nrf-spim";
+    status = "okay";
+    pinctrl-0 = <&spi3_default_alt>;
+    pinctrl-1 = <&spi3_sleep_alt>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <32000000>;
+    label = "SPI_DISPLAY";
+};
+&gpio0 {
+
+    status = "okay";
+    label = "GPIO_0";
+};
+&gpio1 {
+
+    status = "okay";
+    label = "GPIO_1";
+};

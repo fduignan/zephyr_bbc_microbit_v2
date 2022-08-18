@@ -1,0 +1,9 @@
+&gpio0 {
+	status="okay";
+	label="GPIO_0";
+};
+&gpio1 {
+	status="okay";
+	label="GPIO_1";
+};
+
