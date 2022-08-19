@@ -1,0 +1,9 @@
+/*
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&gpio0 {
+    status = "okay";
+    label="GPIO_0";
+};

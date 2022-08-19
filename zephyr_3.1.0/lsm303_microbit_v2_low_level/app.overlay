@@ -1,0 +1,40 @@
+/*
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+&pinctrl {
+    /* IMPORTANT!  There should not be a space before the : in the next line (and similar below) */
+
+
+    i2c1_default_alt: i2c1_default_alt {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA,0,16)>,
+                    <NRF_PSEL(TWIM_SCL,0,8)>;
+            bias-pull-up;
+        };
+    };
+    i2c1_sleep_alt: i2c1_sleep_alt {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA,0,16)>,
+                    <NRF_PSEL(TWIM_SCL,0,8)>;
+            low-power-enable;
+        };
+    };
+
+    
+    
+};
+&i2c0 {
+
+    status = "disabled";
+};
+
+&i2c1 {
+	compatible = "nordic,nrf-twim";
+	status = "okay";
+	label="I2C_1"; 
+    pinctrl-0 = <&i2c1_default_alt>;
+    pinctrl-1 = <&i2c1_sleep_alt>;
+    pinctrl-names = "default", "sleep";
+};
