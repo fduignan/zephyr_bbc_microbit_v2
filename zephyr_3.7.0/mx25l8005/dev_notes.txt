@@ -1,0 +1,5 @@
+SPI1: 
+	SCK P13 label  = gpio0,17 on SOC
+	MISO P14 label = gpio0, 1 on SOC
+	MOSI P15 label = gpio0, 15 on SOC
+	CS' P16 label = gpio1, 2 on SOC

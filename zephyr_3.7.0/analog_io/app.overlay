@@ -1,0 +1,32 @@
+/*
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+&pinctrl {
+    pwm0_default_alt: pwm0_default_alt {
+        group1  {
+            psels = <NRF_PSEL(PWM_OUT0,0,2)>;
+            nordic,invert;
+        };
+    };
+    pwm0_sleep_alt: pwm0_sleep_alt_alt {
+        group1  {
+            psels = <NRF_PSEL(PWM_OUT0,0,2)>;
+            low-power-enable;
+        };
+    };
+};
+&adc {
+	status = "okay";
+    label = "ADC_0";
+    
+};
+&pwm0 {
+	status = "okay";
+	//ch0-pin = <3>; // P0.3 is labelled RING1 on the microbit. (connected to pin 1 in breakout board)
+    pinctrl-0 = <&pwm0_default_alt>;
+    pinctrl-1 = <&pwm0_sleep_alt>;
+    pinctrl-names = "default", "sleep";
+
+    label="PWM_0";
+};
